@@ -11,21 +11,34 @@ public class OnSale {
         this.salePrice = salePrice;
     }
 
-    //adding an item to sale list
+    /**
+     * This method is called whenever the user wishes to add an item to the list
+     * of items on sale. Before adding the item, the method checks if the item
+     * is already on the list.
+     * @param item - some item to add.
+     * @return true/false
+     */
     public boolean addItem(Item item){
-        if(!items.contains(item)){ // checking if item already on sale before adding it
+        if(!items.contains(item) && item.isOnSale()){
             items.add(item);
             return true;
         }
-        return false; //indicates that the item is already on the list
+        return false;
     }
-    //removing item from sale list
+
+    /**
+     * This method is called whenever the user wishes to remove an item from the list
+     * of items on sale. Before removing it, the method checks if the item
+     * is already on the list.
+     * @param item - some item to remove.
+     * @return true/false
+     */
     public boolean removeItem(Item item){
         if(items.contains(item)){
             items.remove(item);
             return true;
         }
-        return false; //indicates that the item is not on the list, hence not on sale
+        return false;
     }
     public void setSalePrice(double salePrice){
         this.salePrice = salePrice;

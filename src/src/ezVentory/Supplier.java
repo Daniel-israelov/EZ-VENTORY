@@ -6,13 +6,12 @@ import java.util.List;
 public class Supplier {
     private String name;
     private int id;
-    List<Item> items = new LinkedList<>();
+    private List<Item> items = new LinkedList<>();
 
     public Supplier(String name, int id) {
         this.name = name;
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
@@ -25,15 +24,31 @@ public class Supplier {
     public void setId(int id) {
         this.id = id;
     }
-    //adding item to the list of items of the current supplier
-    public boolean addItem(Item itemToAdd){
-        if(!items.contains(itemToAdd)){
-            items.add(itemToAdd);
-            return true;
+
+    /**
+     * Assigning an item to a certain supplier.
+     * Before adding it to the current supplier items list, the method runs a for loop
+     * to check if the item is not being supplied by other supplier.
+     * @param itemToAdd - The item to be assigned to the current supplier
+     * @param store - Holds the list of all suppliers and their items
+     * @return boolean.
+     */
+    public boolean addItem(Item itemToAdd, Store store) {
+        for (Supplier supplier : store.suppliers) {
+            if (supplier.items.contains(itemToAdd))
+                return false; //ToDo --> add some error message
         }
-        return false;
+        items.add(itemToAdd);
+        return true;
     }
-    //removing item from list
+
+    /**
+     * Removing item from the list of items being supplied by the current supplier.
+     * First, checking if the item is assigned to the current supplier.
+     * If yes -> remove the item.
+     * @param itemToRemove - The item we wish to remove
+     * @return boolean.
+     */
     public boolean removeItem(Item itemToRemove){
         if(items.contains(itemToRemove)){
             items.remove(itemToRemove);
