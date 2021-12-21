@@ -9,8 +9,8 @@ public class Supplier {
     private List<Item> items = new LinkedList<>();
 
     public Supplier(String name, int id) {
-        this.name = name;
-        this.id = id;
+        setName(name);
+        setId(id);
     }
     public String getName() {
         return name;
@@ -26,20 +26,22 @@ public class Supplier {
     }
 
     /**
-     * Assigning an item to a certain supplier.
-     * Before adding it to the current supplier items list, the method runs a for loop
-     * to check if the item is not being supplied by other supplier.
+     * Iterating through each supplier items list to check if the item
+     * already exist on the database of all items.
      * @param itemToAdd - The item to be assigned to the current supplier
      * @param store - Holds the list of all suppliers and their items
-     * @return boolean.
+     * @return true - if item added to list, else - false.
      */
     public boolean addItem(Item itemToAdd, Store store) {
         for (Supplier supplier : store.suppliers) {
-            if (supplier.items.contains(itemToAdd))
-                return false; //ToDo --> add some error message
+            for (Item item: supplier.items){ //iterating through all items of each supplier
+                if(item.getBarCode().equals(itemToAdd.getBarCode()))
+                    return false;
+            }
         }
         items.add(itemToAdd);
         return true;
+        //ToDo --> add action message
     }
 
     /**
@@ -55,5 +57,6 @@ public class Supplier {
             return true;
         }
         return false;
+        //ToDo --> add action message
     }
 }

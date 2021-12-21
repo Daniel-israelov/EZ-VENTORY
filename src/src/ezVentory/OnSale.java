@@ -8,7 +8,7 @@ public class OnSale {
     private double salePrice;
 
     public OnSale(double salePrice) {
-        this.salePrice = salePrice;
+        setSalePrice(salePrice);
     }
 
     /**
