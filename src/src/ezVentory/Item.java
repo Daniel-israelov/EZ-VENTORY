@@ -9,12 +9,12 @@ public class Item {
     private boolean isOnSale;
 
     public Item(String name, String barCode, double costPrice, double sellPrice, int inventoryAmount, boolean isOnSale) {
-        this.name = name;
-        this.barCode = barCode;
-        this.costPrice = costPrice;
-        this.sellPrice = sellPrice;
-        this.inventoryAmount = inventoryAmount;
-        this.isOnSale = isOnSale;
+        setName(name);
+        setBarCode(barCode);
+        setCostPrice(costPrice);
+        setSellPrice(sellPrice);
+        setInventoryAmount(inventoryAmount);
+        setOnSale(isOnSale);
     }
     public String getName() {
         return name;
