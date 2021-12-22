@@ -6,9 +6,9 @@ public class businessDay {
     private String day;
 
     public businessDay(String openHr, String closeHr, String day){
-        this.openHr=openHr;
-        this.closeHr=closeHr;
-        this.day=day;
+        setOpenHr(openHr);
+        setCloseHr(closeHr);
+        setDay(day);
     }
 
     public String getOpenHr() {
@@ -26,7 +26,7 @@ public class businessDay {
     public String getDay(){
         return day;
     }
-    public void setDay(String day){
+    public void c(String day){
         this.day=day;
     }
 }
