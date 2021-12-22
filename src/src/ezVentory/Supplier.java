@@ -6,7 +6,7 @@ import java.util.List;
 public class Supplier {
     private String name;
     private int id;
-    List<Item> items = new LinkedList<>();
+    private List<Item> items = new LinkedList<>();
 
     public Supplier(String name, int id) {
         this.name = name;
