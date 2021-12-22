@@ -5,13 +5,13 @@ import java.util.List;
 public class department {
     private String name;
     private int id;
-    List<Item> items = new LinkedList<>();
-
+    private List<Item> items = new LinkedList<>();
 
     public department(String name, int id) {
-        this.name = name;
-        this.id = id;
-       }
+         setName(name);
+         setId(id);
+     }
+    
     public String getName() {
         return name;
     }
