@@ -1,11 +1,11 @@
-package FirstTest;
+package src.ezVentory;
 
-public class businessDay {
+public class BusinessDay {
     private String openHr;
     private String closeHr;
     private String day;
 
-    public businessDay(String openHr, String closeHr, String day){
+    public BusinessDay(String openHr, String closeHr, String day){
         this.openHr=openHr;
         this.closeHr=closeHr;
         this.day=day;

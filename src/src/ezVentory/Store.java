@@ -6,7 +6,7 @@ import java.util.List;
 public class Store {
     private String name;
     private List<Employee> employees = new LinkedList<>();
-    private List<BuisnessDay> openHrs = new ArrayList<>();
+    private List<BusinessDay> openHrs = new ArrayList<>();
     private List<Department> departments = new LinkedList<>();
     private List<Supplier> suppliers = new LinkedList<>();
     private Economics economic;
@@ -63,7 +63,7 @@ public class Store {
      * @param day
      * @return True if removed and False if employee doesn't exist
      */
-    public void removeDay(String day)
+    public boolean removeDay(String day)
     {
         for(BusinessDay bDay : openHrs){
             if(bDay.getDay().equals(day)) {

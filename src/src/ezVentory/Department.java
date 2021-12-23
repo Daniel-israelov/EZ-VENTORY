@@ -1,14 +1,15 @@
-package FirstTest;
+package src.ezVentory;
+
 import java.util.LinkedList;
 import java.util.List;
 
-public class department {
+public class Department {
     private String name;
     private int id;
-    List<Item> items = new LinkedList<>();
+    private List<Item> items = new LinkedList<>();
 
 
-    public department(String name, int id) {
+    public Department(String name, int id) {
         this.name = name;
         this.id = id;
        }
@@ -43,7 +44,5 @@ public class department {
     public List<Item> getItemsList(){
         return items;
     }
-
-
 
 }
