@@ -7,19 +7,32 @@ public class Economics {
     private double dailyProfit;
     private double dailyExpense;
     private List<Item> soldItem = new LinkedList<>();
-
+    
     public Economics(double dailyBudget) {
-        this.dailyBudget = dailyBudget;
-        this.dailyProfit = 0;
-        this.dailyExpense = 0;
+        setDailyBudget(dailyBudget);
+        setDailyProfit(0);
+        setDailyExpense(0);
     }
 
-    public void setBudget(double dailyBudget) {
+    public void setDailyBudget(double dailyBudget)
+    {
         this.dailyBudget = dailyBudget;
     }
+    
+    public void setDailyProfit(double dailyProfit)
+    {
+        this.dailyProfit = dailyProfit;
+    }
+    
+    public void setDailyExpense(double dailyExpense)
+    {
+        this.dailyExpense = dailyExpense;
+    }
+    
     public double getBudget() {return dailyBudget; }
     public double getProfit() {return dailyProfit; }
     public double getExpense() {return dailyExpense; }
+    
     //adding item to the list of items of the current supplier
     public boolean addSoldItem(Item soldItemToAdd){
         if(!soldItem.contains(soldItemToAdd)){
