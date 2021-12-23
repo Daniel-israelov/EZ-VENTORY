@@ -19,7 +19,7 @@ public class Economics {
     }
     public double getBudget() {return dailyBudget; }
     public double getProfit() {return dailyProfit; }
-    public double getDailyExpense() {return dailyExpense; }
+    public double getExpense() {return dailyExpense; }
     //adding item to the list of items of the current supplier
     public boolean addSoldItem(Item soldItemToAdd){
         if(!soldItem.contains(soldItemToAdd)){
