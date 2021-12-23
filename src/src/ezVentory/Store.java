@@ -5,17 +5,80 @@ import java.util.List;
 
 public class Store {
     private String name;
-    private List<Employee> employees = new LinkedList<>();
-    private List<BusinessDay> openHrs = new ArrayList<>();
-    private List<Department> departments = new LinkedList<>();
-    private List<Supplier> suppliers = new LinkedList<>();
+    private final List<Employee> employees = new LinkedList<>();
+    private final List<BusinessDay> openHrs = new ArrayList<>();
+    private final List<Department> departments = new LinkedList<>();
+    private final List<Supplier> suppliers = new LinkedList<>();
     private Economics economic;
     private Report report;
 
 
+    /**
+     *
+     * public Store(String name);
+     * public void setName(String name);
+     * public String getName();
+     * public List<Employee> getEmployees();
+     * public List<BusinessDay> getOpenHrs();
+     * public List<Department> getDepartments();
+     * public List<Supplier> getSuppliers();
+     * public Economics getEconomic();
+     * public Report getReport();
+     * public boolean addDepartment(Department department);
+     * public boolean removeDepartment(Department department)
+     * public void changeHrs(String open, String close);
+     * public boolean removeDay(String day);
+     * public boolean addEmployee(Employee employee) ;
+     * public boolean removeEmployee(Employee employee);
+     * public boolean addSupplier(Supplier supplier);
+     * public boolean removeSupplier(Supplier supplier);
+     * public Report getReport(Report report);
+     *
+     */
+
     public Store(String name)
     {
         this.name = name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public String getName()
+    {
+        return this.name;
+    }
+
+    public List<Employee> getEmployees()
+    {
+        return employees;
+    }
+
+    public List<BusinessDay> getOpenHrs()
+    {
+        return openHrs;
+    }
+
+    public List<Department> getDepartments()
+    {
+        return departments;
+    }
+
+    public List<Supplier> getSuppliers()
+    {
+        return suppliers;
+    }
+
+    public Economics getEconomic()
+    {
+        return economic;
+    }
+
+    public Report getReport()
+    {
+        return report;
     }
 
     /**
@@ -23,7 +86,8 @@ public class Store {
      * @param department
      * @return True if added or False if it doesn't exist
      */
-    public boolean addDepartment(Department department) {
+    public boolean addDepartment(Department department)
+    {
         if(!this.departments.contains(department)) // received Department and checking if the class exists or needs to change to an object?
         {
             this.departments.add(department);
@@ -79,7 +143,8 @@ public class Store {
      * @param employee
      * @return True if added and False if employee already exists
      */
-    public boolean addEmployee(Employee employee) {
+    public boolean addEmployee(Employee employee)
+    {
         if(!this.departments.contains(department))
         {
             this.departments.add(department);
@@ -108,7 +173,8 @@ public class Store {
      * @param supplier
      * @return True if added and False if already exists
      */
-    public boolean addSupplier(Supplier supplier) {
+    public boolean addSupplier(Supplier supplier)
+    {
         if(!this.supplier.contains(supplier))
         {
             this.supplier.add(supplier);
@@ -132,10 +198,6 @@ public class Store {
         return false;
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
 
     /**
      * @param report
@@ -145,4 +207,6 @@ public class Store {
     {
         return report.dailyReport();
     }
+
+
 }
