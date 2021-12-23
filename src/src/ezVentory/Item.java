@@ -52,4 +52,13 @@ public class Item {
     public void setOnSale(boolean onSale) {
         isOnSale = onSale;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+
+        if(!(obj instanceof Item i)) return false;
+
+        return this.barCode.equals(i.getBarCode());
+    }
 }

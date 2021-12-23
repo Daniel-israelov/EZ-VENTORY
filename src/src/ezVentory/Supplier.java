@@ -6,12 +6,17 @@ import java.util.List;
 public class Supplier {
     private String name;
     private int id;
-    private List<Item> items = new LinkedList<>();
+    private final List<Item> items = new LinkedList<>();
 
     public Supplier(String name, int id) {
         setName(name);
         setId(id);
     }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,13 +38,15 @@ public class Supplier {
      * @return true - if item added to list, else - false.
      */
     public boolean addItem(Item itemToAdd, Store store) {
-        for (Supplier supplier : store.suppliers) {
-            for (Item item: supplier.items){ //iterating through all items of each supplier
-                if(item.getBarCode().equals(itemToAdd.getBarCode()))
+        List<Supplier> allSupplier = store.getSuppliers();
+
+        for(Supplier sup : allSupplier){
+            for(Item it : sup.getItems()){
+                if(it.equals(itemToAdd))
                     return false;
             }
         }
-        items.add(itemToAdd);
+        this.items.add(itemToAdd);
         return true;
         //ToDo --> add action message
     }
@@ -52,11 +59,21 @@ public class Supplier {
      * @return boolean.
      */
     public boolean removeItem(Item itemToRemove){
-        if(items.contains(itemToRemove)){
-            items.remove(itemToRemove);
-            return true;
+        for(Item it: this.items){
+            if(it.equals(itemToRemove))
+                return false;
         }
-        return false;
+        this.items.add(itemToRemove);
+        return true;
         //ToDo --> add action message
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+
+        if(!(obj instanceof Supplier sp)) return false;
+
+        return this.id == ((Supplier) obj).id;
     }
 }
