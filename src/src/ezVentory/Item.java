@@ -46,7 +46,7 @@ public class Item {
     public void setInventoryAmount(int inventoryAmount) {
         this.inventoryAmount = inventoryAmount;
     }
-    public boolean isOnSale() {
+    public boolean getIsOnSale() {
         return isOnSale;
     }
     public void setOnSale(boolean onSale) {
