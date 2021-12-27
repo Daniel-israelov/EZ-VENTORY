@@ -7,7 +7,7 @@ public class Report {
     void reportBySupplier(){
 
     }
-    void reportByDepartmentv(){
+    void reportByDepartment(){
 
     }
     void reportsHistory(){
