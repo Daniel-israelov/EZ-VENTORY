@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Store {
     private String name;
     private final List<Employee> employees = new LinkedList<>();
@@ -116,10 +117,15 @@ public class Store {
      * @param open
      * @param close
      */
-    public void changeHrs(String open, String close)
-    {
-          this.openHrs.setOpenHr(open);
-          this.openHrs.setCloseHr(close);
+    public boolean changeHrs(BusinessDay day, String open, String close) {
+        for (BusinessDay someday : openHrs) {
+            if (someday.getDay().equals(day.getDay())) {
+                someday.setOpenHr(open);
+                someday.setCloseHr(close);
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -145,12 +151,12 @@ public class Store {
      */
     public boolean addEmployee(Employee employee)
     {
-        if(!this.departments.contains(department))
-        {
-            this.departments.add(department);
-            return true;
+        for(Employee emp : employees){
+            if(emp.equals(employee))
+                return false;
         }
-        return false;
+        employees.add(employee);
+        return true;
     }
 
     /**
@@ -160,12 +166,7 @@ public class Store {
      */
     public boolean removeEmployee(Employee employee)
     {
-        if(this.Employee.contains(employee))
-        {
-            this.Employee.remove(employee);
-            return true;
-        }
-        return false;
+        return employees.remove(employee); // need to check if the employee removed because the equals not recognize different addresses
     }
 
     /**
