@@ -16,7 +16,6 @@ public class Supplier {
     public List<Item> getItems() {
         return items;
     }
-
     public String getName() {
         return name;
     }
@@ -41,10 +40,9 @@ public class Supplier {
         List<Supplier> allSupplier = store.getSuppliers();
 
         for(Supplier sup : allSupplier){
-            for(Item it : sup.getItems()){
+            for(Item it : sup.getItems())
                 if(it.equals(itemToAdd))
                     return false;
-            }
         }
         this.items.add(itemToAdd);
         return true;
