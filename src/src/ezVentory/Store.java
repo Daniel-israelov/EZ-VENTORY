@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Store {
     private String name;
     private final List<Employee> employees = new LinkedList<>();
@@ -12,6 +11,7 @@ public class Store {
     private final List<Supplier> suppliers = new LinkedList<>();
     private Economics economic;
     private Report report;
+
 
 
     /**
