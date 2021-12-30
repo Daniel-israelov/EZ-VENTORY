@@ -13,7 +13,6 @@ public class Store {
     private Economics economic;
     private Report report;
 
-
     /**
      *
      * public Store(String name);

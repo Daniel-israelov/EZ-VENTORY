@@ -9,7 +9,7 @@ public class OnSale {
 
     /**
      * Adding new item to list of items on sale
-     * @param item - item to be added to the list
+     * @param item - item to be added to the list of items on sale
      * @return true - if item added, else - false
      */
     public boolean addItem(Item  item){
