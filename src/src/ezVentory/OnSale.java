@@ -13,6 +13,8 @@ public class OnSale {
      * @return true - if item added, else - false
      */
     public boolean addItem(Item  item){
+        if(!item.getIsOnSale()) return false;
+
         for(Item it : items){
             if(it.equals(item))
                 return false;
@@ -36,6 +38,6 @@ public class OnSale {
         return salePrice;
     }
     public List<Item> getItems() {
-        return items;
+        return this.items;
     }
 }
