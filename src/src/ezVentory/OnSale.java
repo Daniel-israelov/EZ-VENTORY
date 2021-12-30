@@ -9,10 +9,12 @@ public class OnSale {
 
     /**
      * Adding new item to list of items on sale
-     * @param item - item to be added to the list
+     * @param item - item to be added to the list of items on sale
      * @return true - if item added, else - false
      */
     public boolean addItem(Item  item){
+        if(!item.getIsOnSale()) return false;
+
         for(Item it : items){
             if(it.equals(item))
                 return false;
@@ -20,7 +22,6 @@ public class OnSale {
         items.add(item);
         return true;
     }
-
     public boolean removeItem(Item item){
         for(Item it : items){
             if(it.equals(item)) {
@@ -30,16 +31,13 @@ public class OnSale {
         }
         return false;
     }
-
     public void setSalePrice(double salePrice){
         this.salePrice = salePrice;
     }
-
     public double getSalePrice() {
         return salePrice;
     }
-
     public List<Item> getItems() {
-        return items;
+        return this.items;
     }
 }

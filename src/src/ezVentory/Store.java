@@ -12,10 +12,12 @@ public class Store {
     private Economics economic;
     private Report report;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 28368726060ca91034df4252c7338638e4a5b82b
     /**
-     *
      * public Store(String name);
      * public void setName(String name);
      * public String getName();
@@ -176,9 +178,9 @@ public class Store {
      */
     public boolean addSupplier(Supplier supplier)
     {
-        if(!this.supplier.contains(supplier))
+        if(!this.suppliers.contains(supplier))
         {
-            this.supplier.add(supplier);
+            this.suppliers.add(supplier);
             return true;
         }
         return false;
@@ -191,9 +193,9 @@ public class Store {
      */
     public boolean removeSupplier(Supplier supplier)
     {
-        if(this.supplier.contains(supplier))
+        if(this.suppliers.contains(supplier))
         {
-            this.supplier.remove(supplier);
+            this.suppliers.remove(supplier);
             return true;
         }
         return false;
@@ -206,8 +208,6 @@ public class Store {
      */
     public Report getReport(Report report)
     {
-        return report.dailyReport();
+        return report;
     }
-
-
 }
