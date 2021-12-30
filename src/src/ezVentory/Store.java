@@ -204,6 +204,6 @@ public class Store {
      */
     public Report getReport(Report report)
     {
-        return report.dailyReport();
+        return report;
     }
 }
