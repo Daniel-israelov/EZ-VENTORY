@@ -20,7 +20,6 @@ public class OnSale {
         items.add(item);
         return true;
     }
-
     public boolean removeItem(Item item){
         for(Item it : items){
             if(it.equals(item)) {
@@ -30,15 +29,12 @@ public class OnSale {
         }
         return false;
     }
-
     public void setSalePrice(double salePrice){
         this.salePrice = salePrice;
     }
-
     public double getSalePrice() {
         return salePrice;
     }
-
     public List<Item> getItems() {
         return items;
     }
