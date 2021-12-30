@@ -37,7 +37,7 @@ public class Store {
 
     public Store(String name)
     {
-        this.name = name;
+        setName(name);
     }
 
     public void setName(String name)
