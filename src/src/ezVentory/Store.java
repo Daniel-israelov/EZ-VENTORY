@@ -14,7 +14,6 @@ public class Store {
     private Report report;
 
     /**
-     *
      * public Store(String name);
      * public void setName(String name);
      * public String getName();
@@ -175,9 +174,9 @@ public class Store {
      */
     public boolean addSupplier(Supplier supplier)
     {
-        if(!this.supplier.contains(supplier))
+        if(!this.suppliers.contains(supplier))
         {
-            this.supplier.add(supplier);
+            this.suppliers.add(supplier);
             return true;
         }
         return false;
@@ -190,9 +189,9 @@ public class Store {
      */
     public boolean removeSupplier(Supplier supplier)
     {
-        if(this.supplier.contains(supplier))
+        if(this.suppliers.contains(supplier))
         {
-            this.supplier.remove(supplier);
+            this.suppliers.remove(supplier);
             return true;
         }
         return false;
@@ -207,6 +206,4 @@ public class Store {
     {
         return report.dailyReport();
     }
-
-
 }
