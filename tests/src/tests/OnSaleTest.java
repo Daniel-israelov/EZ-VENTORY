@@ -31,6 +31,10 @@ class OnSaleTest {
     void testRemoveItem() {
         onSale.removeItem(item);
         assertEquals(0, onSale.getItems().size(), "list is not empty");
+    }
+
+    @Test
+    void testRemoveItemNotOnList(){
         assertFalse(onSale.removeItem(item), "item should not be on list");
     }
 }
