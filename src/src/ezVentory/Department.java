@@ -6,13 +6,17 @@ import java.util.List;
 public class Department {
     private String name;
     private int id;
-    private List<Item> items = new LinkedList<>();
+    private final List<Item> items = new LinkedList<>();
 
 
     public Department(String name, int id) {
-        this.name = name;
-        this.id = id;
-       }
+        setName(name);
+        setId(id);
+    }
+
+    public List<Item> getItemsList(){
+        return items;
+    }
     public String getName() {
         return name;
     }
@@ -26,23 +30,27 @@ public class Department {
         this.id = id;
     }
 
-    public boolean addItem(Item addToDep) {
-        if (!items.contains(addToDep)) { // checking if item already in the department
-            items.add(addToDep);
-            return true;
+    public boolean addItem(Item addToDep, Store store) {
+        List<Department> allDepartments = store.getDepartments();
+        for(Department dep : allDepartments){
+            for(Item it : dep.getItemsList())
+                if(it.equals(addToDep))
+                    return false;
         }
-        return false;
+        this.items.add(addToDep);
+        return true;
     }
+
     // removing item from department
+
     public boolean removeItem(Item removeFromDep){
-        if(items.contains(removeFromDep)){
-            items.remove(removeFromDep);
-            return true;
+        for(Item it: this.items){
+            if(it.equals(removeFromDep))
+                return false;
         }
-        return false;
+        this.items.add(removeFromDep);
+        return true;
     }
-    public List<Item> getItemsList(){
-        return items;
-    }
+
 
 }

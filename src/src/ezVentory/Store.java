@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-
 public class Store {
     private String name;
     private final List<Employee> employees = new LinkedList<>();
@@ -13,6 +12,11 @@ public class Store {
     private Economics economic;
     private Report report;
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 28368726060ca91034df4252c7338638e4a5b82b
     /**
      * public Store(String name);
      * public void setName(String name);
