@@ -1,5 +1,6 @@
 package src.tests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import src.ezVentory.Item;
@@ -14,6 +15,12 @@ class OnSaleTest {
     void setUp(){
         item = new Item("bamba", "123456", 3.26,4.9,45, true);
         onSale = new OnSale();
+    }
+
+    @AfterEach
+    void tearDown(){
+        item = null;
+        onSale = null;
     }
 
     @Test
@@ -36,5 +43,11 @@ class OnSaleTest {
     @Test
     void testRemoveItemNotOnList(){
         assertFalse(onSale.removeItem(item), "item should not be on list");
+    }
+
+    @Test
+    void testAddItemNotOnSale(){
+        item.setOnSale(false);
+        assertFalse(onSale.addItem(item), "item should be added to list");
     }
 }
