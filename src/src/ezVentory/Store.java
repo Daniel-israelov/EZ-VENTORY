@@ -196,7 +196,6 @@ public class Store {
         return false;
     }
 
-
     /**
      * @param report
      * @return daily report from the Report class
