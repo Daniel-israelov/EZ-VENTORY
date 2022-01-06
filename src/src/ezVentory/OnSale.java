@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class OnSale {
+    //ToDo --> Find a way to update this list from 'Item' class (observer ?)
     private final List<Item> items = new LinkedList<>();
-    private double salePrice;
 
     /**
      * Adding new item to list of items on sale
@@ -30,12 +30,6 @@ public class OnSale {
             }
         }
         return false;
-    }
-    public void setSalePrice(double salePrice){
-        this.salePrice = salePrice;
-    }
-    public double getSalePrice() {
-        return salePrice;
     }
     public List<Item> getItems() {
         return this.items;

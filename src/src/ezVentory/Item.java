@@ -7,6 +7,7 @@ public class Item {
     private double sellPrice;
     private int inventoryAmount;
     private boolean isOnSale;
+    private double salePrice = 0;
 
     public Item(String name, String barCode, double costPrice, double sellPrice, int inventoryAmount, boolean isOnSale) {
         setName(name);
@@ -51,6 +52,14 @@ public class Item {
     }
     public void setOnSale(boolean onSale) {
         isOnSale = onSale;
+
+    }
+    public void setSalePrice(double salePrice){
+        if(this.getIsOnSale())
+            this.salePrice = salePrice;
+    }
+    public double getSalePrice() {
+        return salePrice;
     }
 
     @Override
