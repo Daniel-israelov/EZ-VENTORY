@@ -30,6 +30,7 @@ public class Supplier {
     /**
      * Iterating through each supplier items list to check if the item
      * already exist on the database of all items.
+     * (same item can't be supplied by more than 1 supplier).
      * @param itemToAdd - The item to be assigned to the current supplier
      * @param store - Holds the list of all suppliers and their items
      * @return true - if item added to list, else - false.
@@ -56,11 +57,12 @@ public class Supplier {
      */
     public boolean removeItem(Item itemToRemove){
         for(Item it: this.items){
-            if(it.equals(itemToRemove))
-                return false;
+            if(it.equals(itemToRemove)){
+                items.remove(it);
+                return true;
+            }
         }
-        this.items.add(itemToRemove);
-        return true;
+        return false;
         //ToDo --> add action message
     }
 
@@ -68,7 +70,7 @@ public class Supplier {
     public boolean equals(Object obj) {
         if(this == obj) return true;
 
-        if(!(obj instanceof Supplier sp)) return false;
+        if(!(obj instanceof Supplier)) return false;
 
         return this.id == ((Supplier) obj).id;
     }
