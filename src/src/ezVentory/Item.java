@@ -2,16 +2,16 @@ package src.ezVentory;
 
 public class Item {
     private String name;
-    private String barCode;
+    private String barcode;
     private double costPrice;
     private double sellPrice;
     private int inventoryAmount;
     private boolean isOnSale;
     private double salePrice = 0;
 
-    public Item(String name, String barCode, double costPrice, double sellPrice, int inventoryAmount, boolean isOnSale) {
+    public Item(String name, String barcode, double costPrice, double sellPrice, int inventoryAmount, boolean isOnSale) {
         setName(name);
-        setBarCode(barCode);
+        setBarcode(barcode);
         setCostPrice(costPrice);
         setSellPrice(sellPrice);
         setInventoryAmount(inventoryAmount);
@@ -23,11 +23,11 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-    public String getBarCode() {
-        return barCode;
+    public String getBarcode() {
+        return barcode;
     }
-    public void setBarCode(String barCode) {
-        this.barCode = barCode;
+    public void setBarcode(String barcode) {
+        this.barcode = barcode;
     }
     public double getCostPrice() {
         return costPrice;
@@ -68,6 +68,6 @@ public class Item {
 
         if(!(obj instanceof Item i)) return false;
 
-        return this.barCode.equals(i.getBarCode());
+        return this.barcode.equals(i.getBarcode());
     }
 }
