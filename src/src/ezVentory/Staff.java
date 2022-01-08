@@ -1,6 +1,6 @@
 package src.ezVentory;
 
-public class Staff extends Employee{
+public class Staff extends Employee implements Person{
     protected String roleName;
 
     public Staff(String firstName, String lastName, String id, String password, int accessType, String roleName) {

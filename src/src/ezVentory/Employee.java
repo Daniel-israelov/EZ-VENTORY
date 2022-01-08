@@ -1,6 +1,6 @@
 package src.ezVentory;
 
-public abstract class Employee {
+public abstract class Employee implements Person{
 
     protected String firstName;
     protected String lastName;
@@ -53,6 +53,11 @@ public abstract class Employee {
         if(this==obj)return true;//checking if the obj is equals to the obj that called to the function
         if(!(obj instanceof Employee))return false;//checking if the obj is employee and nothing else
         return this.id.equals(((Employee) obj).getId());//checking if the Id matches
+    }
+
+    @Override
+    public void create() {
+
     }
 }
 

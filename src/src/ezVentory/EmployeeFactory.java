@@ -21,19 +21,17 @@ public class EmployeeFactory {
         if(employeeType.equalsIgnoreCase("STAFF"))
             return new Staff(firstName, lastName, id, password, accessType, roleName);
 
-
         if(employeeType.equalsIgnoreCase("STORE MANAGER"))
-            return new Manager(firstName, lastName, id, password, accessType, roleName);
+            return new StorageManager(firstName, lastName, id, password, accessType);
 
-/*        if(employeeType.equalsIgnoreCase("SHIFT MANAGER"))
-            return new ShiftManager();
+        if(employeeType.equalsIgnoreCase("SHIFT MANAGER"))
+            return new ShiftManager(firstName, lastName, id, password, accessType);
 
         if(employeeType.equalsIgnoreCase("STORAGE MANAGER"))
-            return new StorageManager();
+            return new StorageManager(firstName, lastName, id, password, accessType);
 
         if(employeeType.equalsIgnoreCase("STORE KEEPER"))
-            return new StoreKeeper();
-*/
+            return new StoreKeeper(firstName, lastName, id, password, accessType, roleName);
 
         if(employeeType.equalsIgnoreCase("CASHIER"))
             return new Cashier(firstName, lastName, id, password, accessType, roleName);

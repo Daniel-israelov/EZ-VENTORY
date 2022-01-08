@@ -1,6 +1,6 @@
 package src.ezVentory;
 
-public class Manager extends Staff {
+public class Manager extends Staff implements Person{
     public Store store;
 
     public Manager(String firstName, String lastName, String id, String password, int accessType) {
