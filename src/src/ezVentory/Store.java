@@ -128,7 +128,7 @@ public class Store {
     /**
      * remove day from store
      * @param day
-     * @return True if removed and False if employee doesn't exist
+     * @return True if removed and False if doesn't exist
      */
     public boolean removeDay(String day)
     {

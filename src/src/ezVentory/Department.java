@@ -30,22 +30,34 @@ public class Department {
         this.id = id;
     }
 
+    /**
+     * Iterating through each department items list to check if the item
+     * already exist on the database of all items.
+     * @param addToDep - The item to be assigned to the current department
+     * @param store - Holds the list of all departments and their items
+     * @return true - if item added to list, else - false.
+     */
+
     public boolean addItem(Item addToDep, Store store) {
         List<Department> allDepartments = store.getDepartments();
         for(Department dep : allDepartments){
-            for(Item it : dep.getItemsList())
-                if(it.equals(addToDep))
+            for(Item item : dep.getItemsList())
+                if(item.equals(addToDep))
                     return false;
         }
         this.items.add(addToDep);
         return true;
     }
 
-    // removing item from department
+    /**
+     * Removing item from the list of items of the current department.
+     * @param removeFromDep - The item we wish to remove from current department.
+     * @return boolean.
+     */
 
     public boolean removeItem(Item removeFromDep){
-        for(Item it: this.items){
-            if(it.equals(removeFromDep))
+        for(Item item: this.items){
+            if(item.equals(removeFromDep))
                 return false;
         }
         this.items.add(removeFromDep);
