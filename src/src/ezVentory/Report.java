@@ -8,7 +8,7 @@ public class Report {
     void dailyReport(Economics daily) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-                    ("C:\\Users\\שחר כהן\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dayliReport.txt"));
+                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dayliReport.txt"));
           //  bw.write("Date: "+ +"\n");
             bw.write("Dayli budget: "+ daily.getDailyBudget()+"\n");
             bw.write("Dayli profit: "+ daily.getDailyProfit()+"\n");
@@ -22,7 +22,7 @@ public class Report {
     void reportBySupplier(Store store){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-                    ("C:\\Users\\שחר כהן\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dayliReport.txt"));
+                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dayliReport.txt"));
             List<Supplier> allSupplier = store.getSuppliers();
             for(Supplier sup : allSupplier){
                 for (int i=0;i<allSupplier.size();i++){
@@ -46,7 +46,7 @@ public class Report {
     void reportByDepartment(Item item, Store store){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-                    ("C:\\Users\\שחר כהן\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dayliReport.txt"));
+                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dayliReport.txt"));
             List<Department> allDepartments = store.getDepartments();
             for(Department dep : allDepartments){
                 for (int i=0;i<allDepartments.size();i++){
