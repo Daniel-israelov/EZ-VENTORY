@@ -58,10 +58,10 @@ public class Department {
     public boolean removeItem(Item removeFromDep){
         for(Item item: this.items){
             if(item.equals(removeFromDep))
-                return false;
+                items.remove(removeFromDep);
+                return true;
         }
-        this.items.add(removeFromDep);
-        return true;
+        return false;
     }
 
 

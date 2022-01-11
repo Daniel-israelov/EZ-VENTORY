@@ -54,6 +54,7 @@ public class Report {
                     bw.write("Department name: "+dep.getName()+"\n");
                     bw.write("Supplier ID: "+dep.getId()+"\n");
                     bw.write("Items in stock:\n");
+
                     for(int j=1; j<dep.getItemsList().size();j++){
                         bw.write(j+". "+dep.getItemsList().get(j-1)+"\n");
                     }
