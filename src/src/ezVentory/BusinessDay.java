@@ -14,9 +14,7 @@ public class BusinessDay {
     public String getOpenHr() {
         return openHr;
     }
-    public void setOpenHr(String openHr) {
-        this.openHr = openHr;
-    }
+    public void setOpenHr(String openHr) {this.openHr = openHr;}
     public String getCloseHr(){
         return closeHr;
     }
@@ -26,7 +24,6 @@ public class BusinessDay {
     public String getDay(){
         return day;
     }
-    public void setDay(String day){
-        this.day=day;
-    }
+    public void setDay(String day) {this.day=day;}
+
 }
