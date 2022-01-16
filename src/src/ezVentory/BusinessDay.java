@@ -5,12 +5,13 @@ public class BusinessDay {
     private String openHr;
     private String closeHr;
     private String day;
-    private Date thisDate = new Date();
+    private Date thisDate;
 
     public BusinessDay(String openHr, String closeHr, String day){
         setOpenHr(openHr);
         setCloseHr(closeHr);
         setDay(day);
+        this.thisDate = new Date();
     }
 
     public String getOpenHr() {
