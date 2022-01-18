@@ -43,6 +43,7 @@ public class Report {
             return;
         }
     }
+
     void reportByDepartment(Store store, BusinessDay date){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
@@ -66,6 +67,7 @@ public class Report {
             return;
         }
     }
+    
     void reportsHistory(String fileName){
         Scanner scan = new Scanner(fileName);
         System.out.println(scan.nextLine());
