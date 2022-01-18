@@ -2,12 +2,14 @@ package src.ezVentory;
 import java.util.LinkedList;
 import java.util.List;
 import java.io.*;
+import java.util.Scanner;
 
 public class Report {
     void dailyReport(Economics daily, BusinessDay date) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\dailyReport.txt"));
+                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\daily_"
+                            +date.getDate()+ ".txt"));
             bw.write("Date: " + date.getDate() + ".\n" );
             bw.write("Daily budget: "+ daily.getDailyBudget()+"\n");
             bw.write("Daily profit: "+ daily.getDailyProfit()+"\n");
@@ -21,7 +23,8 @@ public class Report {
     void reportBySupplier(Store store, BusinessDay date){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\supplierReport.txt"));
+                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\supplierReport"
+                            + date.getDate() + ".txt"));
             List<Supplier> allSupplier = store.getSuppliers();
             for(Supplier sup : allSupplier){
                 for (int i=0;i<allSupplier.size();i++){
@@ -42,7 +45,8 @@ public class Report {
     void reportByDepartment(Store store, BusinessDay date){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
-                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\departmentReport.txt"));
+                    ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\departmentReport"
+                            + date.getDate() + ".txt"));
             List<Department> allDepartments = store.getDepartments();
             for(Department dep : allDepartments){
                 for (int i=0;i<allDepartments.size();i++){
@@ -60,7 +64,11 @@ public class Report {
             return;
         }
     }
-    void reportsHistory(){
-
+    void reportsHistory(String fileName){
+        Scanner scan = new Scanner(fileName);
+        System.out.println(scan.nextLine());
+        while(scan.hasNextLine()){
+            System.out.println(scan.nextLine());
+        }
     }
 }
