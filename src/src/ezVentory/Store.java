@@ -110,25 +110,9 @@ public class Store {
     }
 
     /**
-     * send to BusinessDay methods to set the open and close hours
-     * @param open
-     * @param close
-     */
-    public boolean changeHrs(BusinessDay day, String open, String close) {
-        for (BusinessDay someday : openHrs) {
-            if (someday.getDay().equals(day.getDay())) {
-                someday.setOpenHr(open);
-                someday.setCloseHr(close);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    /**
      * remove day from store
      * @param day
-     * @return True if removed and False if doesn't exist
+     * @return True if removed and False if not exists
      */
     public boolean removeDay(String day)
     {
