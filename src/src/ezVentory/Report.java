@@ -5,6 +5,8 @@ import java.io.*;
 import java.util.Scanner;
 
 public class Report {
+
+
     void dailyReport(Economics daily, BusinessDay date) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
@@ -54,7 +56,7 @@ public class Report {
                 for (int i=0;i<allDepartments.size();i++){
                     bw.write("Date: " + date.getDate() + ".\n" );
                     bw.write("Department name: "+dep.getName()+"\n");
-                    bw.write("Supplier ID: "+dep.getId()+"\n");
+                    bw.write("Department ID: "+dep.getId()+"\n");
                     bw.write("Items in stock:\n");
 
                     for(int j=1; j<dep.getItemsList().size();j++){
@@ -67,7 +69,7 @@ public class Report {
             return;
         }
     }
-    
+
     void reportsHistory(String fileName){
         Scanner scan = new Scanner(fileName);
         System.out.println(scan.nextLine());
