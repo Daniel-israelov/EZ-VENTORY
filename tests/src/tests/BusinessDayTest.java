@@ -25,16 +25,5 @@ public class BusinessDayTest {
         assertTrue(businessDay.getDay().isEmpty(), "list is not empty");
     }
 
-    @Test
-    void testOpenHhr(){
-        assertTrue(businessDay.getOpenHr(), "list is not empty");
-    }
-    @Test
-    void testCloseHr(){
-        assertTrue(businessDay.getCloseHr().isEmpty(), "list is not empty");
-    }
-
-
-
 }
 

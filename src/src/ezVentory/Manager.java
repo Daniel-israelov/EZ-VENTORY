@@ -4,7 +4,7 @@ public class Manager extends Staff implements Person{
     public Store store;
 
     public Manager(String firstName, String lastName, String id, String password, int accessType) {
-        super(firstName, lastName, id, password, accessType);
+        super(firstName, lastName, id, password, accessType, "hh");
     }
 
     public void createOrder() {

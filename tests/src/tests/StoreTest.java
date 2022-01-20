@@ -53,7 +53,8 @@ class StoreTest {
 
     @Test
     void testRemoveExistedDay(){
-        BusinessDay day = new BusinessDay("9:00","22:00","monday");
+        BusinessDay day = new BusinessDay("9:00","22:00","Monday");
+        store.addDay(day);
         assertTrue(store.removeDay(day.getDay()), "did not remove existed day");
     }
 
@@ -87,7 +88,7 @@ class StoreTest {
     @Test
     void testAddExistedSupplier(){
         store.addSupplier(supplier);
-        assertTrue(store.addSupplier(supplier),"added existed supplier");
+        assertFalse(store.addSupplier(supplier),"added existed supplier");
     }
 
     @Test

@@ -31,7 +31,7 @@ public class Store {
      * public boolean addSupplier(Supplier supplier);
      * public boolean removeSupplier(Supplier supplier);
      * public Report getReport(Report report);
-     *
+     * public boolean addDay(String day);
      */
 
     public Store(String name)
@@ -187,5 +187,21 @@ public class Store {
     public Report getReport(Report report)
     {
         return report;
+    }
+
+    /**
+     *  add day to store
+     *  @param day
+     *  @return True if added and False if exists
+     */
+    public boolean addDay(BusinessDay day)
+    {
+        for(BusinessDay bDay : openHrs){
+            if(bDay.getDay().equals(day.getDay())) {
+                return false;
+            }
+        }
+        openHrs.add(day);
+        return true;
     }
 }
