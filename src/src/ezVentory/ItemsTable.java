@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ItemsScreen extends JFrame implements ActionListener {
+public class ItemsTable extends JFrame implements ActionListener {
     protected JPanel viewOption;
     protected JComboBox<String> suppliersComboBox;
     protected JTextField supplierTextField;
@@ -20,9 +20,10 @@ public class ItemsScreen extends JFrame implements ActionListener {
     protected JPanel screenPanel;
     protected JPanel btnPanel;
     protected JScrollPane sp;
+    private JPanel bigPanel;
     protected DefaultTableModel tableModel;
 
-    public ItemsScreen(){
+    public ItemsTable(){
         //noinspection BoundFieldAssignment
         screenPanel = new JPanel();
 

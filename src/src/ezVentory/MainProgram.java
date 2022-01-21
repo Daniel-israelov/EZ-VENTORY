@@ -35,13 +35,13 @@ public class MainProgram {
         myStore.addSupplier(cola);
         myStore.addSupplier(osem);
 
-        SuppMngr sm = new SuppMngr();
-        sm.setVisible(true);
+/*        SuppMngr sm = new SuppMngr();
+        sm.setVisible(true);*/
 
-/*        ItemCreator ic = new ItemCreator();
-        ic.setVisible(true);
+/*        ItemMaker im = new ItemMaker();
+        im.setVisible(true);*/
 
-        ItemsScreen is = new ItemsScreen();
-        is.setVisible(true);*/
+        ItemsTable it = new ItemsTable();
+        it.setVisible(true);
     }
 }

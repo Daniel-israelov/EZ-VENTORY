@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ItemCreator extends JFrame implements ActionListener {
+public class ItemMaker extends JFrame implements ActionListener {
     private JTextField header;
     private JTextField tfName;
     private JTextField nameVal;
@@ -24,9 +24,10 @@ public class ItemCreator extends JFrame implements ActionListener {
     private JComboBox<String> suppBox;
     private JPanel panelHeader;
     private JPanel pItem;
+    private JPanel bigPanel;
     private GridLayout gl;
 
-    ItemCreator(){
+    ItemMaker(){
         buildGUI();
         buildButtons();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -107,6 +108,10 @@ public class ItemCreator extends JFrame implements ActionListener {
         mainPanel = new JPanel();
         mainPanel.add(panelHeader, BorderLayout.NORTH);
         mainPanel.add(pItem, BorderLayout.SOUTH);
+
+        //noinspection BoundFieldAssignment
+        bigPanel = new JPanel();
+        bigPanel.add(mainPanel);
     }
 
     private void buildComboBox() {
@@ -119,3 +124,4 @@ public class ItemCreator extends JFrame implements ActionListener {
             suppBox.addItem(sup.getName());
     }
 }
+
