@@ -65,12 +65,20 @@ public class ItemsTable extends JFrame implements ActionListener {
         for(String col : columns)
             tableModel.addColumn(col);
 
-        for(Supplier sup : s.getSuppliers()){
-            for(Item it : sup.getItems()){
+        for (Supplier sup : s.getSuppliers()) {
+            for (Item it : sup.getItems()) {
+                String itName = it.getName();
+                String itBarcode = it.getBarcode();
+                double itCost = it.getCostPrice();
+                double itSell = it.getSellPrice();
+                int itInventory = it.getInventoryAmount();
                 String saleStatus = (it.getIsOnSale()) ? "Active" : "Inactive";
-                String[] itemVals = {it.getName(), it.getBarcode(), String.valueOf(it.getCostPrice()), String.valueOf(it.getSellPrice()), String.valueOf(it.getInventoryAmount()), saleStatus,
-                        String.valueOf(it.getSalePrice()), sup.getName(), it.getDepName()};
-                tableModel.addRow(itemVals);
+                double itSale = it.getSalePrice();
+                String itSupp = sup.getName();
+                String itDep = it.getDepName();
+
+                Object[] itVals = {itName, itBarcode, itCost, itSell, itInventory, saleStatus, itSale, itSupp, itDep};
+                tableModel.addRow(itVals);
             }
         }
     }
