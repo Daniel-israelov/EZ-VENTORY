@@ -15,6 +15,7 @@ public class Economics {
         setDailyExpense(0);
     }
 
+
     public void setDailyBudget(double dailyBudget)
     {
         this.dailyBudget = dailyBudget;

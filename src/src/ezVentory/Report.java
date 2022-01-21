@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Report {
 
 
-    void dailyReport(Economics daily, BusinessDay date) {
+    public void dailyReport(Economics daily, BusinessDay date) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
                     ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\daily_"
@@ -22,7 +22,7 @@ public class Report {
         }
 
     }
-    void reportBySupplier(Store store, BusinessDay date){
+    public void reportBySupplier(Store store, BusinessDay date){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
                     ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\supplierReport"
@@ -46,7 +46,7 @@ public class Report {
         }
     }
 
-    void reportByDepartment(Store store, BusinessDay date){
+    public void reportByDepartment(Store store, BusinessDay date){
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter
                     ("C:\\desktop\\JavaProjects\\EZventory\\EZ-VENTORY\\Reports\\departmentReport"
@@ -70,7 +70,7 @@ public class Report {
         }
     }
 
-    void reportsHistory(String fileName){
+    public void reportsHistory(String fileName){
         Scanner scan = new Scanner(fileName);
         System.out.println(scan.nextLine());
         while(scan.hasNextLine()){

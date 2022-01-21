@@ -4,15 +4,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import src.ezVentory.BusinessDay;
+import src.ezVentory.Store;
 
 
 
 public class BusinessDayTest {
     private BusinessDay businessDay = null;
+    private Store store = null;
 
     @BeforeEach
     void setUp() {
         businessDay = new BusinessDay("Seven am", "Eleven pm", "Sunday");
+        store=new Store("AM:PM");
     }
 
     @AfterEach
@@ -22,8 +25,9 @@ public class BusinessDayTest {
 
     @Test
     void testEmptyDayList(){
-        assertTrue(businessDay.getDay().isEmpty(), "list is not empty");
+        assertFalse(businessDay.getDay().isEmpty(), "list is empty");
     }
+
 
 }
 
