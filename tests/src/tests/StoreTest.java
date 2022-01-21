@@ -15,7 +15,7 @@ class StoreTest {
 
     @BeforeEach
     void setUp(){
-        store = new Store("Super Pharm");
+        store = Store.getInstance();
         employee = new Manager("Yarin", "Agam", "123456789", "1234", 1);
         department = new Department("Food",0);
         supplier = new Supplier("Coca Cola", 777);

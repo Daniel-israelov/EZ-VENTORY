@@ -11,6 +11,7 @@ public class Store {
     private final List<Supplier> suppliers = new LinkedList<>();
     private Economics economic;
     private Report report;
+    private static Store sInstance = null;
 
     /**
      * public Store(String name);
@@ -34,11 +35,10 @@ public class Store {
      * public boolean addDay(String day);
      */
 
-    public Store(String name)
-    {
-        setName(name);
-    }
 
+    private Store(String storeName) {
+        setName(storeName);
+    }
     public void setName(String name)
     {
         this.name = name;
@@ -203,5 +203,13 @@ public class Store {
         }
         openHrs.add(day);
         return true;
+    }
+
+
+
+    public static Store getInstance(){
+        if(sInstance == null)
+            sInstance = new Store("ShuferSal");
+        return sInstance;
     }
 }

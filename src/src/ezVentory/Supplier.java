@@ -32,11 +32,10 @@ public class Supplier {
      * already exist on the database of all items.
      * (same item can't be supplied by more than 1 supplier).
      * @param itemToAdd - The item to be assigned to the current supplier
-     * @param store - Holds the list of all suppliers and their items
      * @return true - if item added to list, else - false.
      */
-    public boolean addItem(Item itemToAdd, Store store) {
-        List<Supplier> allSupplier = store.getSuppliers();
+    public boolean addItem(Item itemToAdd) {
+        List<Supplier> allSupplier = Store.getInstance().getSuppliers();
 
         for(Supplier sup : allSupplier){
             for(Item it : sup.getItems())

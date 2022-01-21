@@ -16,9 +16,9 @@ public class DepartmentTest {
 
     @BeforeEach
     void setUp() {
-        store = new Store("AM:PM");
+        store = Store.getInstance();
         department = new Department("Drinks", 111);
-        item = new Item("Coca-Cola Zero", "123456", 3.26, 4.9, 45, true);
+        item = new Item("Coca-Cola Zero", "123456", 3.26, 4.9);
     }
 
     @AfterEach
@@ -35,7 +35,7 @@ public class DepartmentTest {
 
     @Test
     void testAddItem(){
-        assertTrue(department.addItem(item, store), "failed to add item");
+        assertTrue(department.addItem(item), "failed to add item");
     }
 
     @Test

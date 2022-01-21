@@ -7,26 +7,34 @@ public class Item {
     private double sellPrice;
     private int inventoryAmount;
     private boolean isOnSale;
-    private double salePrice = 0;
+    private String depName;
+    private double salePrice;
 
-    public Item(String name, String barcode, double costPrice, double sellPrice, int inventoryAmount, boolean isOnSale) {
-        setName(name);
-        setBarcode(barcode);
-        setCostPrice(costPrice);
-        setSellPrice(sellPrice);
-        setInventoryAmount(inventoryAmount);
-        setOnSale(isOnSale);
+    public Item(String name, String barcode, double costPrice, double sellPrice) {
+        this.name = name;
+        this.barcode = barcode;
+        this.costPrice = costPrice;
+        this.sellPrice = sellPrice;
+        this.depName = depName;
+        setInventoryAmount(0);
+        setOnSale(false);
+        setSalePrice(0);
     }
+
     public String getName() {
+
         return name;
     }
     public void setName(String name) {
+
         this.name = name;
     }
     public String getBarcode() {
+
         return barcode;
     }
     public void setBarcode(String barcode) {
+
         this.barcode = barcode;
     }
     public double getCostPrice() {
@@ -50,14 +58,17 @@ public class Item {
     public boolean getIsOnSale() {
         return isOnSale;
     }
+
     public void setOnSale(boolean onSale) {
         isOnSale = onSale;
 
     }
+
     public void setSalePrice(double salePrice){
         if(this.getIsOnSale())
             this.salePrice = salePrice;
     }
+
     public double getSalePrice() {
         return salePrice;
     }
@@ -69,5 +80,25 @@ public class Item {
         if(!(obj instanceof Item i)) return false;
 
         return this.barcode.equals(i.getBarcode());
+    }
+    public String getDepName() {
+        return depName;
+    }
+    public void setDepName(String depName) {
+        this.depName = depName;
+    }
+    public void addToSaleList(){
+        if(this.isOnSale)
+            OnSale.getInstance().addItem(this);
+    }
+
+    public Item(String name, String barcode, double costPrice, double sellPrice, int inventoryAmount, boolean isOnSale, String depName) {
+        setName(name);
+        setBarcode(barcode);
+        setCostPrice(costPrice);
+        setSellPrice(sellPrice);
+        setInventoryAmount(inventoryAmount);
+        setOnSale(isOnSale);
+        setDepName(depName);
     }
 }

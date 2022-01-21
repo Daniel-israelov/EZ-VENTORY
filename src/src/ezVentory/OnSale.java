@@ -5,13 +5,20 @@ import java.util.List;
 
 public class OnSale {
     //ToDo --> Find a way to update this list from 'Item' class (observer ?)
-    private final List<Item> items = new LinkedList<>();
+    private final List<Item> items;
+    private static OnSale saleInstance = null;
+
+    public OnSale() {
+        items = new LinkedList<>();
+    }
 
     /**
      * Adding new item to list of items on sale
      * @param item - item to be added to the list of items on sale
      * @return true - if item added, else - false
      */
+
+
     public boolean addItem(Item  item){
         if(!item.getIsOnSale()) return false;
 
@@ -34,4 +41,12 @@ public class OnSale {
     public List<Item> getItems() {
         return this.items;
     }
+
+    public static OnSale getInstance(){
+        if(saleInstance == null)
+            saleInstance = new OnSale();
+        return saleInstance;
+    }
+
+
 }

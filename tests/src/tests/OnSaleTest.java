@@ -13,7 +13,7 @@ class OnSaleTest {
 
     @BeforeEach
     void setUp(){
-        item = new Item("bamba", "123456", 3.26,4.9,45, true);
+        item = new Item("bamba", "123456", 3.26,4.9);
         onSale = new OnSale();
     }
 

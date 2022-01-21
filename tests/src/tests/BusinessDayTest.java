@@ -15,7 +15,7 @@ public class BusinessDayTest {
     @BeforeEach
     void setUp() {
         businessDay = new BusinessDay("Seven am", "Eleven pm", "Sunday");
-        store=new Store("AM:PM");
+        store = Store.getInstance();
     }
 
     @AfterEach

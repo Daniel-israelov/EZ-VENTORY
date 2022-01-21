@@ -1,16 +1,25 @@
+
 package src.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import src.ezVentory.Employee;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeTest {
+    Employee emp = null;
 
-    @BeforeEach
+/*    @BeforeEach
     void setUp() {
-    }
+        emp = new Employee() {
+            @Override
+            public int getAccessType() {
+                return 0;
+            }
+        }
+    }*/
 
     @AfterEach
     void tearDown() {

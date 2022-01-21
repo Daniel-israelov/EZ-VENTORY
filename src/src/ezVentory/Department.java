@@ -34,12 +34,11 @@ public class Department {
      * Iterating through each department items list to check if the item
      * already exist on the database of all items.
      * @param addToDep - The item to be assigned to the current department
-     * @param store - Holds the list of all departments and their items
      * @return true - if item added to list, else - false.
      */
 
-    public boolean addItem(Item addToDep, Store store) {
-        List<Department> allDepartments = store.getDepartments();
+    public boolean addItem(Item addToDep) {
+        List<Department> allDepartments = Store.getInstance().getDepartments();
         for(Department dep : allDepartments){
             for(Item item : dep.getItemsList())
                 if(item.equals(addToDep))

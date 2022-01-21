@@ -15,9 +15,9 @@ class SupplierTest {
 
     @BeforeEach
     void setUp(){
-        store = new Store("Super-Pharm");
+        store = Store.getInstance();
         supplier = new Supplier("Coca Cola", 777);
-        item = new Item("Cola", "123456", 3.26,4.9,45, true);
+        item = new Item("Cola", "123456", 3.26,4.9);
     }
 
     @AfterEach
@@ -34,7 +34,7 @@ class SupplierTest {
 
     @Test
     void testAddItem(){
-        assertTrue(supplier.addItem(item, store), "failed to add item");
+        assertTrue(supplier.addItem(item), "failed to add item");
     }
 
     @Test
